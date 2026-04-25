@@ -123,12 +123,20 @@ export function SettingsPage({ theme, onThemeChange }: SettingsPageProps) {
         </button>
       </section>
 
-      <section className="panel space-y-2 text-sm text-slate-600 dark:text-slate-300">
-        <div>schemaVersion: {state.schemaVersion}</div>
+      <section className="panel space-y-2 text-sm text-slate-600 dark:text-slate-600">
+        <div>JSON数据版本 schemaVersion: {state.schemaVersion}</div>
         <div>创建时间: {new Date(state.createdAt).toLocaleString()}</div>
         <div>更新时间: {new Date(state.updatedAt).toLocaleString()}</div>
         <div>存储方式: IndexedDB 优先，失败时自动降级 localStorage</div>
+        <div>当前版本的数据默认保存在本机浏览器中，不会自动同步到其他设备。</div>
+        
       </section>
+
+      <p className="mt-12 text-center text-xs tracking-wide text-slate-400 dark:text-slate-500">
+          Vibe coding by Felix Yau
+          <br />
+          Version: 0.1.0
+        </p>
 
       {message ? <div className="rounded-2xl bg-blue-50 px-4 py-3 text-sm font-semibold text-blue-700 dark:bg-blue-950 dark:text-blue-200">{message}</div> : null}
     </div>
