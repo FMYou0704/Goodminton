@@ -160,12 +160,12 @@ export function MatchesPage() {
         ) : null}
       </section>
 
-      <section className="grid gap-2">
+      <section className="grid gap-2"> {/* 推荐比赛区域 */}
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-          {[
-            { label: "推荐下一官方赛", recommendation: dynamicRecommendation.nextOfficial },
-            { label: "推荐补位赛", recommendation: dynamicRecommendation.nextFiller },
-            { label: "推荐总体下一场", recommendation: dynamicRecommendation.nextOverall }
+          {[ // 按照官方赛、补位赛、综合推荐的优先级顺序展示推荐比赛
+            { label: "下一场官方赛", recommendation: dynamicRecommendation.nextOfficial },
+            { label: "下一场补位赛", recommendation: dynamicRecommendation.nextFiller },
+            { label: "系统推荐下一场", recommendation: dynamicRecommendation.nextOverall }
           ].map((item) => (
             <div key={item.label} className="rounded-2xl border border-white/80 bg-white p-3 shadow-soft dark:border-slate-800 dark:bg-slate-900">
               <div className="text-sm font-black text-slate-900 dark:text-white">{item.label}</div>

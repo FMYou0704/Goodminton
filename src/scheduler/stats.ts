@@ -107,6 +107,7 @@ function marginMultiplier(scoreA: number, scoreB: number): number {
   return Math.min(1.25, 1 + 0.08 * Math.log(1 + margin));
 }
 
+//功能：计算比赛结果的预期得分和 Elo 评分变化，更新玩家统计数据，并根据官方比赛结果对玩家进行排名。
 function expectedScore(teamRating: number, opponentTeamRating: number): number {
   return 1 / (1 + Math.pow(10, (opponentTeamRating - teamRating) / 400));
 }

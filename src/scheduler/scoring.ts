@@ -46,7 +46,7 @@ function pairScore(counter: PairCounter, a: string, b: string, newReward: number
   return -repeatPenalty * count;
 }
 
-export function scoreCandidate(
+export function scoreCandidate(// 功能：根据当前的统计数据和权重，对一个候选比赛进行评分，分数越高表示该比赛越优。
   candidate: CandidateMatch,
   context: ScoringContext,
   weights = DEFAULT_SCORING_WEIGHTS
